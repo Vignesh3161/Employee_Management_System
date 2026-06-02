@@ -1,16 +1,24 @@
-# React + Vite
+# Employee Management System (EMS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A highly responsive, aesthetically stunning, and secure **Employee Management System** built with **React (Vite + CSS)** and **Java Spring Boot 3.3.4**, integrated with a remote **Neon PostgreSQL** database server.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 Premium Features
 
-## React Compiler
+- **Dashboard & Analytics**: Rich, beautiful visual charts built with `Recharts` for tracking department employee headcounts and gender distributions, combined with summary metrics (salary costs, active staff, pending leave lists).
+- **Core Corporate Directory**: Rich profiles representing personal, contact, and structural variables (job title, hiring date, salary bracket, department, status, address, gender).
+- **Roster & Department Divisions**: Integrated control elements for corporate departments featuring automated headcount calculation, and deletion warnings when departments hold active staff.
+- **Real-Time Attendance Portal**: Interactive clock-in/out console containing a live ticking workspace timer, automatic status evaluations (e.g. flagging check-ins past 9:15 AM as `LATE`), and manager-led override overrides.
+- **Leave Request & Approvals Workflow**: Book personal leave types (`SICK`, `CASUAL`, `VACATION`, `UNPAID`) with automatic calendar date validation. Managers can approve or reject leaves with custom feedback remarks directly from their console.
+- **Role-Based Security Model**: Custom JWT token-based Spring Security 6.x middleware dividing permissions across `ROLE_ADMIN`, `ROLE_MANAGER`, and `ROLE_EMPLOYEE`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🗃️ Database Connection Details
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The system is configured to interact with a high-performance cloud **Neon PostgreSQL** database. All tables are automatically schema-generated via Hibernate DDL during the backend's first startup.
+
+- **Dialect**: `PostgreSQLDialect`
+- **SSL Verification Mode**: `require` (enabled for secure cloud transactions)
+- **Automatic Seed Initializer**: The database is automatically seeded with essential cost divisions, default employee logs, and credentials on startup if the records are blank.
