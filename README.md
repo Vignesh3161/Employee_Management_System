@@ -62,15 +62,26 @@ npm run build
 
 You can host this static React frontend for **100% free** using Vercel, Netlify, or Render:
 
-### Option A: Deploy on Vercel (Recommended)
+### Option A: Deploy on Render (Free Static Site)
+1. Log in to [Render.com](https://render.com/).
+2. Click the **New +** button in the dashboard and select **Static Site**.
+3. Connect your GitHub repository.
+4. Configure the Static Site:
+   * **Name:** `employee-management-frontend`
+   * **Root Directory:** `frontend` *(This is important because your React project is in the frontend subfolder)*
+   * **Build Command:** `npm run build`
+   * **Publish Directory:** `dist` *(This is where Vite outputs compiled production files)*
+5. Click **Create Static Site**. Render will build the site and deploy it to a permanent, fast URL (e.g. `https://employee-management-frontend.onrender.com`).
+
+### Option B: Deploy on Vercel
 1. Install Vercel CLI: `npm install -g vercel`
 2. Run the deployment command in the `frontend` folder:
    ```bash
    vercel
    ```
-3. Follow the CLI prompts to link your account. Vercel will automatically build the site and provide a free `https://your-project.vercel.app` URL.
+3. Follow the CLI prompts to link your account. Vercel will automatically detect Vite, build the site, and provide a free `https://your-project.vercel.app` URL.
 
-### Option B: Deploy on Netlify
+### Option C: Deploy on Netlify
 1. Log in to [Netlify.com](https://www.netlify.com/).
 2. Click **Add New Site** -> **Import from an existing project**.
 3. Connect your GitHub repository.
@@ -78,3 +89,4 @@ You can host this static React frontend for **100% free** using Vercel, Netlify,
    * **Build command:** `npm run build`
    * **Publish directory:** `frontend/dist`
 5. Click **Deploy Site**.
+
